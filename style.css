@@ -94,3 +94,8 @@ h1{
     border-radius: 8px;
     margin-left: 60px;
 }
+
+.squares > div:hover{
+    background-color: lightgray;
+    transition : .3s;
+}
