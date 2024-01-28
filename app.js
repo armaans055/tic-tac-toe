@@ -20,75 +20,121 @@ const squareNine = document.querySelector('.nine')
 const playerOneScore = document.querySelector('.player-1-score')
 const playerTwoScore = document.querySelector('.player-2-score')
 
-squareOne.addEventListener("click", ()=>{
+function gameBoardEditor(x){
     if(playerOneTurn === true){
-        gameBoard[0] = 'x'
+        gameBoard[x-1] = 'x'
+        playerTwoTurn = true;
+        playerOneTurn = false;
     }else if(playerTwoTurn === true){
-        gameBoard[0] = 'o'
+        gameBoard[x-1] = 'o'
+        playerOneTurn = true;
+        playerTwoTurn = false;
     }
+}
+squareOne.addEventListener('click', ()=>{
+    gameStart()
 })
-squareTwo.addEventListener("click", ()=>{
-    if(playerOneTurn === true){
-        gameBoard[1] = 'x'
-    }else if(playerTwoTurn === true){
-        gameBoard[1] = 'o'
-    }
+squareTwo.addEventListener('click', ()=>{
+    gameStart()
 })
-squareThree.addEventListener("click", ()=>{
-    if(playerOneTurn === true){
-        gameBoard[2] = 'x'
-    }else if(playerTwoTurn === true){
-        gameBoard[2] = 'o'
-    }
+squareThree.addEventListener('click', ()=>{
+    gameStart()
 })
-squareFour.addEventListener("click", ()=>{
-    if(playerOneTurn === true){
-        gameBoard[3] = 'x'
-    }else if(playerTwoTurn === true){
-        gameBoard[3] = 'o'
-    }
+squareFour.addEventListener('click', ()=>{
+    gameStart()
 })
-squareFive.addEventListener("click", ()=>{
-    if(playerOneTurn === true){
-        gameBoard[4] = 'x'
-    }else if(playerTwoTurn === true){
-        gameBoard[4] = 'o'
-    }
+squareFive.addEventListener('click', ()=>{
+    gameStart()
 })
-squareSix.addEventListener("click", ()=>{
-    if(playerOneTurn === true){
-        gameBoard[5] = 'x'
-    }else if(playerTwoTurn === true){
-        gameBoard[5] = 'o'
-    }
+squareSix.addEventListener('click', ()=>{
+    gameStart()
 })
-squareSeven.addEventListener("click", ()=>{
-    if(playerOneTurn === true){
-        gameBoard[6] = 'x'
-    }else if(playerTwoTurn === true){
-        gameBoard[6] = 'o'
-    }
+squareSeven.addEventListener('click', ()=>{
+    gameStart()
 })
-squareEight.addEventListener("click", ()=>{
-    if(playerOneTurn === true){
-        gameBoard[7] = 'x'
-    }else if(playerTwoTurn === true){
-        gameBoard[7] = 'o'
-    }
+squareEight.addEventListener('click', ()=>{
+    gameStart()
 })
-squareNine.addEventListener("click", ()=>{
-    if(playerOneTurn === true){
-        gameBoard[8] = 'x'
-    }else if(playerTwoTurn === true){
-        gameBoard[8] = 'o'
-    }
+squareNine.addEventListener('click', ()=>{
+    gameStart()
 })
 
 function gameStart(){
-    gameBoard = [
-        1 , 2 , 3,
-        4 , 5 , 6,
-        7 , 8 , 9
-    ]
+
     gameLive = true;
+    playerOneTurn = true;
+    squareOne.addEventListener('click', ()=>{
+        gameBoardEditor(1)
+        if(gameBoard[0] === 'x'){
+            squareOne.innerHTML = "X"
+        }else{
+            squareOne.innerHTML = "O"
+        }
+    })
+    squareTwo.addEventListener('click', ()=>{
+        gameBoardEditor(2)
+        if(gameBoard[1] === 'x'){
+            squareTwo.innerHTML = "X"
+        }else{
+            squareTwo.innerHTML = "O"
+        }
+    })
+    squareThree.addEventListener('click', ()=>{
+        gameBoardEditor(3)
+        if(gameBoard[2] === 'x'){
+            squareThree.innerHTML = "X"
+        }else{
+            squareThree.innerHTML = "O"
+        }
+    })
+    squareFour.addEventListener('click', ()=>{
+        gameBoardEditor(4)
+        if(gameBoard[3] === 'x'){
+            squareFour.innerHTML = "X"
+        }else{
+            squareFour.innerHTML = "O"
+        }
+    })
+    squareFive.addEventListener('click', ()=>{
+        gameBoardEditor(5)
+        if(gameBoard[4] === 'x'){
+            squareFive.innerHTML = "X"
+        }else{
+            squareFive.innerHTML = "O"
+        }
+    })
+    squareSix.addEventListener('click', ()=>{
+        gameBoardEditor(6)
+        if(gameBoard[5] === 'x'){
+            squareSix.innerHTML = "X"
+        }else{
+            squareSix.innerHTML = "O"
+        }
+    })
+    squareSeven.addEventListener('click', ()=>{
+        gameBoardEditor(7)
+        if(gameBoard[6] === 'x'){
+            squareSeven.innerHTML = "X"
+        }else{
+            squareSeven.innerHTML = "O"
+        }
+    })
+    squareEight.addEventListener('click', ()=>{
+        gameBoardEditor(8)
+        if(gameBoard[7] === 'x'){
+            squareEight.innerHTML = "X"
+        }else{
+            squareEight.innerHTML = "O"
+        }
+    })
+    squareNine.addEventListener('click', ()=>{
+        gameBoardEditor(9)
+        if(gameBoard[8] === 'x'){
+            squareNine.innerHTML = "X"
+        }else{
+            squareNine.innerHTML = "O"
+        }
+    })
+    
+
 }
