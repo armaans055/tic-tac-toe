@@ -10,8 +10,6 @@ let openSpots = [
 ]
 let totalGameTurns = 0;
 let gameLive = false;
-// let playerOneTurn = true;
-// let playerTwoTurn = false;
 let playerOneScor = 0;
 let playerTwoScor = 0;
 const header = document.querySelector('h1')
@@ -48,10 +46,15 @@ const playerTwoScore = document.querySelector('.player-2-score')
 //     squareNine.innerHTML = ""
     
 // }
+function resetBoard(){
+    for(i = 0; i < 9 ; i ++){
+        gameBoard[i] = i + 1
+    }
+}
 function checkIfSquareIsOpen(x){
     if(openSpots[x-1] === true){
         totalGameTurns -= 1
-        header.innerHTML = "error square is full"
+        header.innerHTML = "Square is full"
     }else{
         header.innerHTML = "Tic Tac Toe"
     }
@@ -62,62 +65,78 @@ function incrementTotalGameTurns(){
 function horizontalWinCheck(){
     if(gameBoard[0] === 'x' && gameBoard[1] === 'x' && gameBoard[2] === 'x'){
         gameLive = false;
-        console.log('Horizontal Win Player One')
+        playerOneScor++
+        pauseGame()
     }else if(gameBoard[3] === 'x' && gameBoard[4] === 'x' && gameBoard[5] === 'x'){
         gameLive = false;
-        console.log('Horizontal Win Player One')
+        playerOneScor++
+        pauseGame()
     }else if(gameBoard[6] === 'x' && gameBoard[7] === 'x' && gameBoard[8] === 'x'){
         gameLive = false;
-        console.log('Horizontal Win Player One')
+        playerOneScor++
+        pauseGame()
     }else if(gameBoard[0] === 'o' && gameBoard[1] === 'o' && gameBoard[2] === 'o'){
         gameLive = false;
-        console.log('Horizontal Win Player Two')
+        playerTwoScor++
+        pauseGame()
     }else if(gameBoard[3] === 'o' && gameBoard[4] === 'o' && gameBoard[5] === 'o'){
         gameLive = false;
-        console.log('Horizontal Win Player Two')
+        playerTwoScor++
+        pauseGame()
     }else if(gameBoard[6] === 'o' && gameBoard[7] === 'o' && gameBoard[8] === 'o'){
         gameLive = false;
-        console.log('Horizontal Win Player Two')
+        playerTwoScor++
+        pauseGame()
     }
 }
 function verticalWinCheck(){
     if(gameBoard[0] === 'x' && gameBoard[3] === 'x' && gameBoard[6] === 'x'){
         gameLive = false;
-        console.log('Vertical Win Player One')
+        playerOneScor++
+        pauseGame()
 
     }else if(gameBoard[1] === 'x' && gameBoard[4] === 'x' && gameBoard[7] === 'x'){
         gameLive = false;
-        console.log('Vertical Win Player One')
+        playerOneScor++
+        pauseGame()
 
     }else if(gameBoard[2] === 'x' && gameBoard[5] === 'x' && gameBoard[8] === 'x'){
         gameLive = false;
-        console.log('Vertical Win Player One')
+        playerOneScor++
+        pauseGame()
 
     }else if(gameBoard[0] === 'o' && gameBoard[3] === 'o' && gameBoard[6] === 'o'){
         gameLive = false;
-        console.log('Vertical Win Player Two')
+        playerTwoScor++
+        pauseGame()
     }else if(gameBoard[1] === 'o' && gameBoard[4] === 'o' && gameBoard[7] === 'o'){
         gameLive = false;
-        console.log('Vertical Win Player Two')
+        playerTwoScor++
+        pauseGame()
     }else if(gameBoard[2] === 'o' && gameBoard[5] === 'o' && gameBoard[8] === 'o'){
         gameLive = false;
-        console.log('Vertical Win Player Two')
+        playerTwoScor++
+        pauseGame()
 }
 
 }
 function diagonalWinCheck(){
     if(gameBoard[0] === 'x' && gameBoard[4] === 'x' && gameBoard[8] === 'x'){
         gameLive = false;
-        console.log('diag Win Player One')
+        playerOneScor++
+        pauseGame()
     } else if(gameBoard[2] === 'x' && gameBoard[4] === 'x' && gameBoard[6] === 'x'){
         gameLive = false;
-        console.log('diag Win Player One')
+        playerOneScor++
+        pauseGame()
     } else if(gameBoard[0] === 'o' && gameBoard[4] === 'o' && gameBoard[8] === 'o'){
         gameLive = false;
-        console.log('diagnol Win Player two')
+        playerTwoScor++
+        pauseGame()
     } else if(gameBoard[2] === 'o' && gameBoard[4] === 'o' && gameBoard[6] === 'o'){
         gameLive = false;
-        console.log('diagnol Win Player two')
+        playerTwoScor++
+        pauseGame()
     } 
 }
 function gameBoardEditor(x){
