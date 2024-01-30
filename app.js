@@ -410,13 +410,3 @@ function gameBoardEditor(x){
 
 
 
-//git ttest
-// squareOne.addEventListener('click', checkIfGameIsLive())
-// squareTwo.addEventListener('click', checkIfGameIsLive())
-// squareThree.addEventListener('click', checkIfGameIsLive())
-// squareFour.addEventListener('click', checkIfGameIsLive())
-// squareFive.addEventListener('click', checkIfGameIsLive())
-// squareSix.addEventListener('click', checkIfGameIsLive())
-// squareSeven.addEventListener('click', checkIfGameIsLive())
-// squareEight.addEventListener('click', checkIfGameIsLive())
-// squareNine.addEventListener('click', checkIfGameIsLive())
