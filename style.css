@@ -103,3 +103,27 @@ h1{
     background-color: lightgray;
     transition : .3s;
 }
+.restart-button{
+    grid-area: 10 / 5 / 9 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.resetbutton{
+    margin-left: 60px;
+    height: 60px;
+    width: 100px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 6px;
+    font-family: 'VT323';
+    font-size: 1.4em;
+
+}
+
+.resetbutton:hover{
+    background-color: lightgray;
+    transition: .3s;
+}
+
+
