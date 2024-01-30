@@ -126,4 +126,14 @@ h1{
     transition: .3s;
 }
 
+.start{
+    background-color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+.start:hover{
+    background-color: lightgoldenrodyellow;
+}
+
 

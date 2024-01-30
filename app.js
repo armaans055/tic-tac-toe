@@ -9,7 +9,7 @@ let openSpots = [
     false, false, false
 ]
 let totalGameTurns = 0;
-let gameLive = false;
+let gameLive = true;
 
 const header = document.querySelector('h1')
 const squareOne = document.querySelector('.one')
@@ -24,20 +24,30 @@ const squareNine = document.querySelector('.nine')
 const playerOneScore = document.querySelector('.player-1-score')
 const playerTwoScore = document.querySelector('.player-2-score')
 const resetButtonArea = document.querySelector('.restart-button')
+const gameStart = document.querySelector('.gameStart')
+
+
+
 
 function playerOneScor(){
     header.innerHTML = "Player 1 Wins!"
+
 }
 function playerTwoScor(){
     header.innerHTML = "Player 2 Wins!"
+
 }
 function createResetButton(){
+    gameLive = false;
+    
+
     resetButton = document.createElement('button')
     let innerText = document.createTextNode("Restart")
     resetButton.className += "resetbutton";
     resetButton.appendChild(innerText)
     resetButtonArea.appendChild(resetButton)
     resetButton.addEventListener('click', ()=>{
+        
         resetBoard()
         resetButtonArea.removeChild(resetButton)
         header.innerHTML = "Tic Tac Toe"
@@ -62,6 +72,7 @@ function resetBoard(){
             false, false, false,
             false, false, false
         ]
+        gameLive = true;
 }
 function checkIfSquareIsOpen(x){
     if(openSpots[x-1] === true){
@@ -192,15 +203,21 @@ function gameBoardEditor(x){
 
 }
 
-    
+
+
     squareOne.addEventListener('click', ()=>{
         checkIfSquareIsOpen(1)
         gameBoardEditor(1)
-        
-        if(gameBoard[0] === 'x'){
-            squareOne.innerHTML = "X"
-        }else{
-            squareOne.innerHTML = "O"
+        if(gameLive === false){
+            squareOne.innerHTML = squareOne.innerHTML
+            resetButtonArea.removeChild(resetButton)
+        }
+        if(gameLive === true){ 
+            if(gameBoard[0] === 'x'){
+                squareOne.innerHTML = "X"
+            }else{
+                squareOne.innerHTML = "O"
+            }
         }
         horizontalWinCheck()
         verticalWinCheck()
@@ -213,11 +230,16 @@ function gameBoardEditor(x){
         checkIfSquareIsOpen(2)
         gameBoardEditor(2)
         
-        
-        if(gameBoard[1] === 'x'){
-            squareTwo.innerHTML = "X"
-        }else{
-            squareTwo.innerHTML = "O"
+        if(gameLive === false){
+            squareTwo.innerHTML = squareTwo.innerHTML
+            resetButtonArea.removeChild(resetButton)
+        }
+        if(gameLive === true){  
+            if(gameBoard[1] === 'x'){
+                squareTwo.innerHTML = "X"
+            }else{
+                squareTwo.innerHTML = "O"
+            }
         }
         horizontalWinCheck()
         verticalWinCheck()
@@ -230,11 +252,16 @@ function gameBoardEditor(x){
         checkIfSquareIsOpen(3)
         gameBoardEditor(3)
 
-        
-        if(gameBoard[2] === 'x'){
-            squareThree.innerHTML = "X"
-        }else{
-            squareThree.innerHTML = "O"
+        if(gameLive === false){
+            squareThree.innerHTML = squareThree.innerHTML
+            resetButtonArea.removeChild(resetButton)
+        }
+        if(gameLive === true){ 
+            if(gameBoard[2] === 'x'){
+                squareThree.innerHTML = "X"
+            }else{
+                squareThree.innerHTML = "O"
+            }
         }
         horizontalWinCheck()
         verticalWinCheck()
@@ -248,10 +275,16 @@ function gameBoardEditor(x){
         gameBoardEditor(4)
 
         
-        if(gameBoard[3] === 'x'){
-            squareFour.innerHTML = "X"
-        }else{
-            squareFour.innerHTML = "O"
+        if(gameLive === false){
+            squareFour.innerHTML = squareFour.innerHTML
+            resetButtonArea.removeChild(resetButton)
+        }
+        if(gameLive === true){ 
+            if(gameBoard[3] === 'x'){
+                squareFour.innerHTML = "X"
+            }else{
+                squareFour.innerHTML = "O"
+            }
         }
         horizontalWinCheck()
         verticalWinCheck()
@@ -265,10 +298,16 @@ function gameBoardEditor(x){
         gameBoardEditor(5)
 
         
-        if(gameBoard[4] === 'x'){
-            squareFive.innerHTML = "X"
-        }else{
-            squareFive.innerHTML = "O"
+        if(gameLive === false){
+            squareFive.innerHTML = squareFive.innerHTML
+            resetButtonArea.removeChild(resetButton)
+        }
+        if(gameLive === true){ 
+            if(gameBoard[4] === 'x'){
+                squareFive.innerHTML = "X"
+            }else{
+                squareFive.innerHTML = "O"
+            }
         }
         horizontalWinCheck()
         verticalWinCheck()
@@ -282,10 +321,16 @@ function gameBoardEditor(x){
         gameBoardEditor(6)
 
         
-        if(gameBoard[5] === 'x'){
-            squareSix.innerHTML = "X"
-        }else{
-            squareSix.innerHTML = "O"
+        if(gameLive === false){
+            squareSix.innerHTML = squareSix.innerHTML
+            resetButtonArea.removeChild(resetButton)
+        }
+        if(gameLive === true){ 
+            if(gameBoard[5] === 'x'){
+                squareSix.innerHTML = "X"
+            }else{
+                squareSix.innerHTML = "O"
+            }
         }
         horizontalWinCheck()
         verticalWinCheck()
@@ -299,10 +344,16 @@ function gameBoardEditor(x){
         gameBoardEditor(7)
 
         
-        if(gameBoard[6] === 'x'){
-            squareSeven.innerHTML = "X"
-        }else{
-            squareSeven.innerHTML = "O"
+        if(gameLive === false){
+            squareSeven.innerHTML = squareSeven.innerHTML
+            resetButtonArea.removeChild(resetButton)
+        }
+        if(gameLive === true){ 
+            if(gameBoard[6] === 'x'){
+                squareSeven.innerHTML = "X"
+            }else{
+                squareSeven.innerHTML = "O"
+            }
         }
         horizontalWinCheck()
         verticalWinCheck()
@@ -316,10 +367,16 @@ function gameBoardEditor(x){
         gameBoardEditor(8)
 
         
-        if(gameBoard[7] === 'x'){
-            squareEight.innerHTML = "X"
-        }else{
-            squareEight.innerHTML = "O"
+        if(gameLive === false){
+            squareEight.innerHTML = squareEight.innerHTML
+            resetButtonArea.removeChild(resetButton)
+        }
+        if(gameLive === true){ 
+            if(gameBoard[7] === 'x'){
+                squareEight.innerHTML = "X"
+            }else{
+                squareEight.innerHTML = "O"
+            }
         }
         horizontalWinCheck()
         verticalWinCheck()
@@ -332,10 +389,16 @@ function gameBoardEditor(x){
         gameBoardEditor(9)
 
         
-        if(gameBoard[8] === 'x'){
-            squareNine.innerHTML = "X"
-        }else{
-            squareNine.innerHTML = "O"
+        if(gameLive === false){
+            squareNine.innerHTML = squareNine.innerHTML
+            resetButtonArea.removeChild(resetButton)
+        }
+        if(gameLive === true){ 
+            if(gameBoard[8] === 'x'){
+                squareNine.innerHTML = "X"
+            }else{
+                squareNine.innerHTML = "O"
+            }
         }
         horizontalWinCheck()
         verticalWinCheck()
@@ -343,3 +406,17 @@ function gameBoardEditor(x){
         drawCheck()
         incrementTotalGameTurns()
     })
+
+
+
+
+
+// squareOne.addEventListener('click', checkIfGameIsLive())
+// squareTwo.addEventListener('click', checkIfGameIsLive())
+// squareThree.addEventListener('click', checkIfGameIsLive())
+// squareFour.addEventListener('click', checkIfGameIsLive())
+// squareFive.addEventListener('click', checkIfGameIsLive())
+// squareSix.addEventListener('click', checkIfGameIsLive())
+// squareSeven.addEventListener('click', checkIfGameIsLive())
+// squareEight.addEventListener('click', checkIfGameIsLive())
+// squareNine.addEventListener('click', checkIfGameIsLive())
