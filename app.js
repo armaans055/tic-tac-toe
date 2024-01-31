@@ -30,11 +30,11 @@ const gameStart = document.querySelector('.gameStart')
 
 
 function playerOneScor(){
-    header.innerHTML = "Player 1 Wins!"
+    header.innerHTML = "Player X Wins!"
 
 }
 function playerTwoScor(){
-    header.innerHTML = "Player 2 Wins!"
+    header.innerHTML = "Player O Wins!"
 
 }
 function createResetButton(){
